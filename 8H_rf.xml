@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<sod>
+<eventArm>
+    <fdsnEvent> <!-- default USGS -->
+        <originTimeRange>
+            <startTime>2015-07-01T00:00:00.000Z</startTime>
+            <endTime>2017-06-30T00:00:00.000Z</endTime>
+        </originTimeRange>
+        <magnitudeRange>
+			<min>5.5</min>
+            <max>9.9</max>
+        </magnitudeRange>
+        <originDepthRange>
+            <unit>KILOMETER</unit>
+            <min>0</min>
+			<max>2000</max>
+        </originDepthRange>
+    </fdsnEvent>
+    <printlineEventProcess/>
+	<CSVEventPrinter>
+		<filename>event.csv</filename>
+	</CSVEventPrinter>
+</eventArm>
+
+<networkArm>
+    <fdsnStation>
+		<includeAvailability>false</includeAvailability>
+		<host>geofon.gfz-potsdam.de</host>
+	</fdsnStation>
+    <networkCode>8H</networkCode>
+	<!--stationCode>EP*</stationCode-->
+	<channelCode>HH*</channelCode>
+    <sacPoleZeroWriter/>
+    <responseWriter/>
+    <printlineChannelProcess/>
+</networkArm>
+
+<waveformArm>
+    <distanceRange>
+        <unit>DEGREE</unit>
+        <min>30</min>
+		<max>95</max>
+    </distanceRange>
+    <originOffsetRequest>
+        <beginOffset>
+            <unit>SECOND</unit>
+            <value>-10</value>
+        </beginOffset>
+        <endOffset>
+            <unit>SECOND</unit>
+            <value>1300</value>
+        </endOffset>
+    </originOffsetRequest>
+    <fdsnDataSelect>
+		<host>geofon.gfz-potsdam.de</host>
+	</fdsnDataSelect>
+    <someCoverage/>
+    <someDataCoverage/>
+    <printlineSeismogramProcess/>
+    <collapseOverlaps/>
+    <gapFill><zeroFill/></gapFill>
+    <merge/>
+    <rMean/>
+    <rTrend/>
+    <taper/>
+    <sacWriter>
+		<workingDir>seismograms</workingDir>
+		<location>$event.getTime('yyyy.DDD.HH.mm.ss')/$event.getTime('yyyy.DDD.HH.mm.ss').${network.code}.${station.code}.${channel.orientationCode}</location>
+	
+
+    </sacWriter>
+
+    <transferResponse>
+        <lowCut>0.001</lowCut>
+        <lowPass>0.05</lowPass>
+        <highPass>20</highPass>
+        <highCut>40</highCut>
+    </transferResponse>
+    <sacWriter>
+        <workingDir>processedSeismograms</workingDir>
+		<location>$event.getTime('yyyy.DDD.HH.mm.ss')/$event.getTime('yyyy.DDD.HH.mm.ss').${network.code}.${station.code}.${channel.orientationCode}</location>
+		<sacHeaderScript type="jython">
+from edu.sc.seis.seisFile.sac import SacConstants
+h = sac.getHeader()
+h.evdp = h.evdp/1000
+		</sacHeaderScript>
+		<littleEndian/>
+    </sacWriter>
+    <legacyExecute>
+        <command>echo Sod saved this file</command>
+    </legacyExecute>
+</waveformArm>
+
+</sod>
