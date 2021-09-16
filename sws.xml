@@ -34,7 +34,7 @@
                 SCEDC - service.scedc.caltech.edu
                 NCEDC - service.ncedc.org
                 GEOFON - geofon.gfz-potsdam.de
-		ETHZ - eida.ethz.ch
+        		ETHZ - eida.ethz.ch
                 ORFEUS - www.orfeus-eu.org   -->
 		    <includeAvailability>false</includeAvailability>
 		    <host>eida.ethz.ch</host>

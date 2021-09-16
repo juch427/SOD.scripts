@@ -15,7 +15,7 @@
     </eventArm>
 
 
-    <!--  **************************  Network Arm  *************************  *-->
+    <!--  **************************  Network Arm  **************************  -->
     <networkArm>
         <fdsnStation>
             <!-- host for datacenter
@@ -100,35 +100,7 @@
          <legacyExecute>
              <command>echo Sod saved this file</command>
          </legacyExecute>
-         
-         <!--  remove response, same as command in SAC:
-               transfer from polezero subtype xyz to none freq 0.005 0.01 20 40  -->
-
-         <transferResponse>
-             <lowCut>0.005</lowCut>
-             <lowPass>0.01</lowPass>
-             <highPass>20</highPass>
-             <highCut>40</highCut>
-         </transferResponse>
-
-         <!--  write data after removing response  -->
-         <sacWriter>
-             <workingDir>seismograms</workingDir>
-             <location>$event.getTime('yyyy.DDD.HH.mm.ss')/$event.getTime('yyyy.DDD.HH.mm.ss').${network.code}.${station.code}.${channel.code}.sac</location>
-             <!-- Set event depth in km instead of meters -->
-            <sacHeaderScript type="jython">
-                from edu.sc.seis.seisFile.sac import SacConstants
-                h = sac.getHeader()
-                h.evdp = h.evdp/1000
-            </sacHeaderScript>
-
-        </sacWriter>
-
-        <printlineSeismogramProcess/>
-        <legacyExecute>
-            <command>echo Sod saved this file</command>
-        </legacyExecute>
-    
+       
     </waveformArm>
 
 
