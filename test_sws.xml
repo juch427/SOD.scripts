@@ -2,30 +2,30 @@
 <sod>
 
     <!-- *****************************  Event Arm  ***************************** -->
-<eventArm>
-    <fdsnEvent> <!-- default use USGS catalog -->
-        <originTimeRange>
-            <startTime>2013-01-01T00:00:00.000Z</startTime>
-            <endTime>2014-12-31T00:00:00.000Z</endTime>
-        </originTimeRange>
-        <magnitudeRange>
-			<min>5.0</min>
-            <max>9.9</max>
-        </magnitudeRange>
-        <originDepthRange>
-            <unit>KILOMETER</unit>
-            <min>0</min>
-			<max>2000</max>
-        </originDepthRange>
-    </fdsnEvent>
-    <printlineEventProcess/>
-	<CSVEventPrinter>
+    <eventArm>
+        <fdsnEvent> <!-- default use USGS catalog -->
+            <originTimeRange>
+                <startTime>2013-01-01T00:00:00.000Z</startTime>
+                <endTime>2014-12-31T00:00:00.000Z</endTime>
+            </originTimeRange>
+            <magnitudeRange>
+			    <min>5.0</min>
+                <max>9.9</max>
+            </magnitudeRange>
+            <originDepthRange>
+                <unit>KILOMETER</unit>
+                <min>0</min>
+			    <max>2000</max>
+            </originDepthRange>
+        </fdsnEvent>
+        <printlineEventProcess/>
+	    <CSVEventPrinter>
 		<filename>event.csv</filename>
-	</CSVEventPrinter>
-</eventArm>
+	    </CSVEventPrinter>
+    </eventArm>
 
 
-    <!--  **************************  Network Arm  *************************  *-->
+    <!--  **************************  Network Arm  **************************  -->
     <networkArm>
         <fdsnStation>
             <!-- host for datacenter
