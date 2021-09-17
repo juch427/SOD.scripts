@@ -30,13 +30,13 @@
 		    <!--includeRestricted>true</includeRestricted-->
 	    </fdsnStation>
 
-        <!--  network subsetter  -->
+        <!--  network   -->
         <networkCode>XO</networkCode>   
 
-        <!--  station subsetter  -->
+        <!--  station   -->
         <stationCode>*</stationCode>
 
-        <!--  channel subsetter  -->
+        <!--  channel   -->
         <channelCode>*H*</channelCode>
 
         <sacPoleZeroWriter/>    <!--  print channel poles and zeros to file  -->
@@ -50,7 +50,7 @@
     <!--  *****************************  Waveform Arm  *****************************  -->
     <waveformArm>
 
-        <!--  request Generator subsetter  -->
+        <!--  request Generator   -->
         <originOffsetRequest>
             <beginOffset>
                 <unit>SECOND</unit>
@@ -62,16 +62,16 @@
             </endOffset>
         </originOffsetRequest>
 
-        <!--  seismogram source subtter  -->
+        <!--  seismogram source   -->
         <fdsnDataSelect>
 		    <host>geofon.gfz-potsdam.de</host>
 	    </fdsnDataSelect>
 
-        <!--  avaiable Data subsetter  -->
+        <!--  avaiable Data   -->
         <someCoverage/>
 
         <!--  **********  Seismogram Process  ***********  -->
-        <!--  check after asking for the seismograms taht they really exist  -->
+        <!--  after asking for the seismograms,check whether really exist  -->
         <someDataCoverage/>
 
         <!--  merge, deal with overlap and gap-->
@@ -86,7 +86,7 @@
 
         <!--  wirte raw data  -->
         <sacWriter>
-             <workingDir>seismograms-raw</workingDir>
+             <workingDir>seismograms_raw</workingDir>
              <location>$event.getTime('yyyy.DDD.HH.mm.ss')/$event.getTime('yyyy.DDD.HH.mm.ss').${network.code}.${station.code}.${channel.code}.sac</location>
              <!-- set event depth from m to km  -->
              <sacHeaderScript type="jython">
