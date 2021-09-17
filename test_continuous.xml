@@ -3,6 +3,7 @@
 
     <!-- *****************************  Event Arm  ***************************** -->
     <eventArm>
+
         <periodicFakeEventSource>
             <startTime>20070703T00:00:00Z</startTime>
             <interval>
@@ -11,12 +12,15 @@
             </interval>
             <numEvents>2</numEvents>
         </periodicFakeEventSource>
+
         <CSVEventPrinter/>
+
     </eventArm>
 
 
     <!--  **************************  Network Arm  **************************  -->
     <networkArm>
+
         <fdsnStation>
             <!-- host for datacenter
                 IRIS-DMC - service.iris.edu (default)
@@ -70,7 +74,7 @@
         <!--  avaiable Data   -->
         <someCoverage/>
 
-        <!--  **********  Seismogram Process  ***********  -->
+        <!--  ******************  Seismogram Process  *******************  -->
         <!--  after asking for the seismograms,check whether really exist  -->
         <someDataCoverage/>
 
@@ -86,6 +90,7 @@
 
         <!--  wirte raw data  -->
         <sacWriter>
+
              <workingDir>seismograms_raw</workingDir>
              <location>$event.getTime('yyyy.DDD.HH.mm.ss')/$event.getTime('yyyy.DDD.HH.mm.ss').${network.code}.${station.code}.${channel.code}.sac</location>
              <!-- set event depth from m to km  -->
@@ -96,7 +101,9 @@
              </sacHeaderScript>
 
          </sacWriter>
+
          <printlineSeismogramProcess/>
+
          <legacyExecute>
              <command>echo Sod saved this file</command>
          </legacyExecute>

@@ -1,33 +1,41 @@
 <?xml version="1.0"?>
 <sod>
 
-    <!-- *****************************  Event Arm  ***************************** -->
-    <eventArm>
-        <fdsnEvent> <!-- default use USGS catalog -->
-            <originTimeRange>
+	<!-- *****************************  Event Arm  ***************************** -->
+	<eventArm>
+		<fdsnEvent> <!-- default use USGS catalog -->
+            
+			<originTimeRange>
                 <startTime>2013-01-01T00:00:00.000Z</startTime>
                 <endTime>2014-12-31T00:00:00.000Z</endTime>
             </originTimeRange>
-            <magnitudeRange>
+
+            <magnitudeRange>	<!--  mag  -->
                 <min>5.0</min>
                 <max>9.9</max>
             </magnitudeRange>
-            <originDepthRange>
+
+            <originDepthRange>	<!--  evdp  -->
                 <unit>KILOMETER</unit>
                 <min>0</min>
-			    <max>2000</max>
-            </originDepthRange>
-        </fdsnEvent>
+				<max>2000</max>
+			</originDepthRange>
+
+	    </fdsnEvent>
+
         <printlineEventProcess/>
-	    <CSVEventPrinter>
-		<filename>event.csv</filename>
+
+	    <CSVEventPrinter>	<!--  output event catalog  -->
+			<filename>event.csv</filename>
 	    </CSVEventPrinter>
+
     </eventArm>
 
 
     <!--  **************************  Network Arm  **************************  -->
     <networkArm>
         <fdsnStation>
+
             <!-- host for datacenter
                 IRIS-DMC - service.iris.edu (default)
                 IRIS-DMC's PH5 web services - service.iris.edu
@@ -39,6 +47,7 @@
 		    <includeAvailability>false</includeAvailability>
 		    <host>eida.ethz.ch</host>
 		    <!--includeRestricted>true</includeRestricted-->
+
 	    </fdsnStation>
 
         <!--  network   -->
@@ -87,7 +96,7 @@
         <!--  avaiable Data   -->
         <someCoverage/>
 
-        <!--  **********  Seismogram Process  ***********  -->
+        <!--  ******************  Seismogram Process   *******************  -->
         <!--  after asking for the seismograms, check whether really exist  -->
         <someDataCoverage/>
 
@@ -113,7 +122,9 @@
              </sacHeaderScript>
 
          </sacWriter>
+
          <printlineSeismogramProcess/>
+
          <legacyExecute>
              <command>echo Sod saved this file</command>
          </legacyExecute>
@@ -142,6 +153,7 @@
         </sacWriter>
 
         <printlineSeismogramProcess/>
+
         <legacyExecute>
             <command>echo Sod saved this file</command>
         </legacyExecute>
