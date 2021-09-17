@@ -6,14 +6,14 @@
 	<eventArm>
 		<fdsnEvent> <!-- default use USGS catalog -->
             
-			<originTimeRange>
+            <originTimeRange>
                 <startTime>2013-01-01T00:00:00.000Z</startTime>
                 <endTime>2014-12-31T00:00:00.000Z</endTime>
             </originTimeRange>
 
             <magnitudeRange>	<!--  mag  -->
                 <min>5.0</min>
-                <max>9.9</max>
+               <max>9.9</max>
             </magnitudeRange>
 
             <originDepthRange>	<!--  evdp  -->
