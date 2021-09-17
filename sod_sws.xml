@@ -41,13 +41,13 @@
 		    <!--includeRestricted>true</includeRestricted-->
 	    </fdsnStation>
 
-        <!--  network subsetter  -->
+        <!--  network   -->
         <networkCode>XA</networkCode>   
 
-        <!--  station subsetter  -->
+        <!--  station   -->
         <stationCode>*</stationCode>
 
-        <!--  channel subsetter  -->
+        <!--  channel   -->
         <channelCode>HH*</channelCode>
 
         <sacPoleZeroWriter/>    <!--  print channel poles and zeros to file  -->
@@ -61,7 +61,7 @@
     <!--  *****************************  Waveform Arm  *****************************  -->
     <waveformArm>
 
-        <!--  request Generator subsetter  -->
+        <!--  request Generator   -->
         <distanceRange>	<!--  distance requset  -->
             <unit>DEGREE</unit>
             <min>84</min>
@@ -79,16 +79,16 @@
             </endOffset>
         </originOffsetRequest>
 
-        <!--  seismogram source subtter  -->
+        <!--  seismogram source   -->
         <fdsnDataSelect>
 		    <host>eida.ethz.ch</host>
 	    </fdsnDataSelect>
 
-        <!--  avaiable Data subsetter  -->
+        <!--  avaiable Data   -->
         <someCoverage/>
 
         <!--  **********  Seismogram Process  ***********  -->
-        <!--  check after asking for the seismograms taht they really exist  -->
+        <!--  after asking for the seismograms, check whether really exist  -->
         <someDataCoverage/>
 
         <!--  merge, deal with overlap and gap-->
@@ -103,7 +103,7 @@
 
         <!--  wirte raw data  -->
         <sacWriter>
-             <workingDir>seismograms-raw</workingDir>
+             <workingDir>seismograms_raw</workingDir>
              <location>$event.getTime('yyyy.DDD.HH.mm.ss')/$event.getTime('yyyy.DDD.HH.mm.ss').${network.code}.${station.code}.${channel.code}.sac</location>
              <!-- set event depth from m to km  -->
              <sacHeaderScript type="jython">
@@ -130,7 +130,7 @@
 
          <!--  write data after removing response  -->
          <sacWriter>
-             <workingDir>seismograms</workingDir>
+             <workingDir>seismograms_resp</workingDir>
              <location>$event.getTime('yyyy.DDD.HH.mm.ss')/$event.getTime('yyyy.DDD.HH.mm.ss').${network.code}.${station.code}.${channel.code}.sac</location>
              <!-- Set event depth in km instead of meters -->
             <sacHeaderScript type="jython">
