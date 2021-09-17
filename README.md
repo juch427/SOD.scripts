@@ -1,8 +1,8 @@
 # SOD.scripts
 Scripts used in SOD ([Standerd Order of Data](http://www.seis.sc.edu/sod/)) to download seismograms in several formats (e.g., SAC, miniSEED.)
-After downloading and installing [SOD](http://www.seis.sc.edu/downloads/sod/), we can run the code as:
+After downloading and installing [SOD](http://www.seis.sc.edu/downloads/sod/), we can run as:
 ```
-sod -f test_sws.xml
+$ sod -f test_sws.xml
 ```
 ## Notes
 The default Data Center for catalog and seismogram is IRIS-DMC, SOme non-default Data Centers are shown as follows:
