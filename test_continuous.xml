@@ -8,12 +8,12 @@
         <periodicFakeEventSource>	<!--  fake event  -->
             <startTime>20070703T00:00:00Z</startTime>
             
-			<interval>	<!-- one file for one day  -->
+            <interval>	<!-- one file for one day  -->
                 <unit>DAY</unit>
                 <value>1</value>
             </interval>
             
-			<numEvents>2</numEvents>	<!-- number of days for downloading   -->
+            <numEvents>2</numEvents>	<!-- number of days for downloading   -->
 			
         </periodicFakeEventSource>
 
