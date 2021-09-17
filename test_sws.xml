@@ -9,7 +9,7 @@
                 <endTime>2014-12-31T00:00:00.000Z</endTime>
             </originTimeRange>
             <magnitudeRange>
-			    <min>5.0</min>
+                <min>5.0</min>
                 <max>9.9</max>
             </magnitudeRange>
             <originDepthRange>
