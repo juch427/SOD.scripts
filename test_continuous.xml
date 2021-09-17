@@ -1,16 +1,20 @@
+<!--  Script for downloading continuous seismogram  -->
 <?xml version="1.0"?>
 <sod>
 
     <!-- *****************************  Event Arm  ***************************** -->
     <eventArm>
 
-        <periodicFakeEventSource>
+        <periodicFakeEventSource>	<!--  fake event  -->
             <startTime>20070703T00:00:00Z</startTime>
-            <interval>
+            
+			<interval>	<!-- one file for one day  -->
                 <unit>DAY</unit>
                 <value>1</value>
             </interval>
-            <numEvents>2</numEvents>
+            
+			<numEvents>2</numEvents>	<!-- number of days for downloading   -->
+			
         </periodicFakeEventSource>
 
         <CSVEventPrinter/>
@@ -56,14 +60,17 @@
 
         <!--  request Generator   -->
         <originOffsetRequest>
+			
             <beginOffset>
                 <unit>SECOND</unit>
                 <value>0</value>
             </beginOffset>
+			
             <endOffset>
                 <unit>SECOND</unit>
                 <value>86400</value>
             </endOffset>
+			
         </originOffsetRequest>
 
         <!--  seismogram source   -->
