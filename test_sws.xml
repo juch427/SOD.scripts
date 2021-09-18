@@ -36,11 +36,11 @@
 
 	<!--  **************************  Network Arm  **************************  -->
 	<networkArm>
+		
 		<fdsnStation>
 			<includeAvailability>false</includeAvailability>
 			<host>eida.ethz.ch</host>
 			<!--includeRestricted>true</includeRestricted-->
-
 		</fdsnStation>
 
 		<!--  network   -->
