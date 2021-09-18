@@ -5,8 +5,8 @@
 	<!-- *****************************  Event Arm  ***************************** -->
 	<eventArm>
 		<fdsnEvent> <!-- default use USGS catalog -->
-            
-			<originTimeRange>
+
+			<originTimeRange>	<!--  period  -->
 				<startTime>2013-01-01T00:00:00.000Z</startTime>
 				<endTime>2014-12-31T00:00:00.000Z</endTime>
 			</originTimeRange>
