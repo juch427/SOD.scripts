@@ -5,7 +5,7 @@ After downloading and installing [SOD](http://www.seis.sc.edu/downloads/sod/), w
 $ sod -f test_sws.xml
 ```
 ## Notes
-The default Data Center for catalog and seismogram is IRIS-DMC, SOme non-default Data Centers are shown as follows:
+The default Data Center for catalog and seismogram is IRIS-DMC, Some non-default Data Centers are shown as follows:
 - **IRIS-DMC**: `service.iris.edu`
 - **IRIS-DMC's PH5**: `service.iris.edu`
 - **SCEDC**: `service.scedc.caltech.edu`
